@@ -14,8 +14,6 @@ class Main extends React.Component {
     render() {
         return (
             <>
-              <h1>DigitalBrain Test Extension</h1>
-
               <Frame onLoad={this.loadingFunc} head={[<link type="text/css" rel="stylesheet" href={chrome.runtime.getURL("/static/css/content.css")} ></link>]}> 
                 <FrameContextConsumer>
                 {
@@ -58,6 +56,7 @@ waitForElm('.app_container').then((elm) => {
     console.log("___EXT: app_container found: ", elm);
     elm.appendChild(app);
     ReactDOM.render(<Main />, app);
+    app.style.display = "none";
 });
 
 

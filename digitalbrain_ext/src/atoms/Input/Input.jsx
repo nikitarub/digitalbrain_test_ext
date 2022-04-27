@@ -8,6 +8,7 @@ export class Input extends React.Component {
     render() {
         return (
             <input
+            className="digitalbrain-input"
             onChange={(e) => this.props.onChange(e)}
             placeholder={this.props.placeholder}>
             </input>

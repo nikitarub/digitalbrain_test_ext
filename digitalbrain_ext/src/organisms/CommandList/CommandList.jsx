@@ -52,7 +52,7 @@ export class CommandList extends React.Component {
     render () { 
         let command_list = <></>;
         if (this.state.commands.length == 0){
-            command_list = <h1>No command found</h1>
+            command_list = <h2 className="digitalbrain-notfound">No command found</h2>
         } else {  
             command_list = this.state.commands.map((command_data) =>
                 <CommandItem 
@@ -63,7 +63,7 @@ export class CommandList extends React.Component {
         }
 
         return (
-            <div className="command-list">
+            <div className="digitalbrain-command-list">
                 {command_list}
             </div>
         )

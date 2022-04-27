@@ -41,19 +41,20 @@ export class NotificationList extends React.Component {
 
 
     pushNotificationCallback = (data) => {
-        this.pushNotification(data.title, data.text);
+        this.pushNotification(data);
     }
 
-    pushNotification = (title, text) => {
+    pushNotification = (data) => {
         
         let notification_data = this.state.notification_data;
         const id = "notification_" + Object.keys(notification_data).length;
-        const data = {
+        const new_data = {
             id: id,
-            title: title,
-            text: text
+            title: data.title,
+            text: data.text,
+            logo: data.logo
         }
-        notification_data[id] = data;
+        notification_data[id] = new_data;
         
         this.setState({...this.state,
             notification_data

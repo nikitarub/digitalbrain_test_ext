@@ -6,7 +6,11 @@ import "./main.scss";
 import { CommandList } from '../../organisms/CommandList/CommandList';
 import { NotificationList } from '../../organisms/NotificationList/NotificationList';
 
-import logo from '../../logo.svg';
+import shopify_logo from '../../assets/images/shopify_logo.png';
+import stripe_logo from '../../assets/images/stripe_logo.png';
+import adress_icon from '../../assets/images/adress_icon.jpeg';
+
+
 import { Search } from '../../molecules/Search/Search';
 
 
@@ -14,47 +18,35 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notification_data: {
-                "notification_0" : {
-                    id: "notification_0",
-                    title: "some 0",
-                    text: "more 0"
-                },
-                "notification_1" : {
-                    id: "notification_1",
-                    title: "some 1",
-                    text: "more 1"
-                }
-            },
             commands: [
                 {
                     name: "Refund Stripe Transaction",
-                    logo: logo,
+                    logo: stripe_logo,
                     notification: {
                         title: "Clicked on Refund Stripe Transaction",
                         text: "Stripe refund OK",
                         type: "success",
-                        logo: logo
+                        logo: stripe_logo
                     }
                 },
                 {
                     name: "Change shipping address",
-                    logo: logo,
+                    logo: adress_icon,
                     notification: {
                         title: "Clicked on Change shipping address",
                         text: "Shipping Adress has been changed",
                         type: "success",
-                        logo: logo
+                        logo: adress_icon
                     }
                 },
                 {
                     name: "Refund Shopify",
-                    logo: logo,
+                    logo: shopify_logo,
                     notification: {
                         title: "Clicked on Refund Shopify",
                         text: "Shopify refund OK",
                         type: "success",
-                        logo: logo
+                        logo: shopify_logo
                     }
                 }
             ]

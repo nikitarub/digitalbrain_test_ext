@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import "./notification.scss";
 
 import { Button } from '../../atoms/Button/Button';
+import { Logo } from '../../atoms/Logo/Logo';
 
 
 export class Notification extends React.Component {
@@ -40,18 +41,30 @@ export class Notification extends React.Component {
 
     render () {
         const button_props = {
-            label: "Закрыть",
+            label: "",
             onClick: this.removeNotificationWrapper
         }
         return (
             <div className="digitalbrain-notification" id={this.props.id}>
-                <h1>
-                    {this.props.title}
-                </h1>
-                <p>
+                <div className="digitalbrain-notification-header">
+                    <div className="digitalbrain-notification-header-title-logo">
+                        <div className="digitalbrain-notification-header-title-logo--logo">
+                            <Logo 
+                                src={this.props.logo}
+                            />
+                        </div>
+                        
+                        
+                        {this.props.title}
+                    </div>
+                    
+                    <Button className="close-button" {...button_props}/>
+                </div>
+                <div className="digitalbrain-notification-body">
                     {this.props.text}
-                </p>
-                <Button {...button_props}/>
+                </div>
+                
+                
             </div>
         )
     }

@@ -2,21 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './commanditem.scss';
 
-import { Button } from '../../atoms/Button/Button';
+import { Logo } from '../../atoms/Logo/Logo';
 
 import Bus from 'bus-graph';
+
 
 export class CommandItem extends React.Component {
 
     pushNotification = () => {        
-        const data = {
-            title: this.props.notification.title,
-            text: this.props.notification.text
-        }
         Bus.emit( 
             {
                 event: "pushNotification", 
-                data: data
+                data: this.props.notification
             }
         );
     }
@@ -24,10 +21,22 @@ export class CommandItem extends React.Component {
     render() {
         
         return (
-            <Button 
-            onClick={this.pushNotification}
-            label={this.props.name}
-            />
+            <div
+                className="digitalbrain-command-item"
+                onClick={this.pushNotification}
+            >
+                <div
+                    className="digitalbrain-command-item-logo"
+                >
+                <Logo 
+                src={this.props.logo}
+                />
+                </div>
+                <div className="digitalbrain-command-item-text">
+                    {this.props.name}
+                </div>
+            </div>
+            
         )
     }
 }
