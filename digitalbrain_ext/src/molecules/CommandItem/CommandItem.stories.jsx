@@ -2,7 +2,7 @@ import React from 'react';
 
 import { CommandItem } from './CommandItem';
 import logo from '../../logo.svg';
-import shopify_logo from '../../assets/images/shopify_logo.png';
+import shopify_logo from '../../assets/images/shopify_logo.svg';
 
 
 export default {

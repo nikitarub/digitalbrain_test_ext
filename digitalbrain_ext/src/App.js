@@ -13,7 +13,7 @@ class App extends Component {
         <h2 className="App-header">
           DigitalBrain Test Extension
         </h2>
-        <Main />
+        <Main isExt={this.props.isExt}/>
       </div>
     );
   }
