@@ -1,0 +1,30 @@
+.digitalbrain-command-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    height: 30px;
+
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    
+    &:hover {
+        background-color: #F9FAFB;
+    }
+
+    &:active{
+        background-color: #EDF4FC;
+    }
+}
+
+.digitalbrain-command-item-text { 
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.digitalbrain-command-item-logo { 
+    margin-left: 10px;
+    margin-right: 10px;
+}

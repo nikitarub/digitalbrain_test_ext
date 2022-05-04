@@ -1,0 +1,58 @@
+
+
+.digitalbrain-notification {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    color: #222;
+    z-index: 100;
+    border-radius: 7px;
+    box-shadow: 0px 5px 20px rgb(208, 212, 212);
+    margin: 10px;
+}
+
+.digitalbrain-notification-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.digitalbrain-notification-header-title-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30px;
+    font-size: 16px;
+    padding-right: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &--logo{
+        padding-right: 10px;
+    }
+}
+
+
+
+.digitalbrain-notification-body {
+    font-size: 14px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.close-button {
+    background-color: #E6EBF1;
+    border: none;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+
+    &:after{
+        display: inline-block;
+        font-size: 14px;
+        content: "\00d7"; /* This will render the 'X' */
+    }
+}

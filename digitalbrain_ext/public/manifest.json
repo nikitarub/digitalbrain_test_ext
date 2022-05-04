@@ -1,0 +1,21 @@
+{
+  "short_name": "DigitalBrain",
+  "name": "DigitalBrain test ext",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": ["app/background.js"]
+  },
+  "browser_action": {},
+  "content_scripts" : [
+    {
+      "matches": [ "https://*.zendesk.com/agent/tickets/*", "https://*.zendesk.com/agent/tickets/*" ],
+      "css": ["/css/root.css", "/static/css/content.css"],
+      "js": ["/static/js/content.js"]
+    }
+  ],
+  "web_accessible_resources":[
+    "/static/css/content.css", "/static/media/*"
+  ],
+  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+}
