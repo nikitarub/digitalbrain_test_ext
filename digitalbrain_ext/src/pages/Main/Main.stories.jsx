@@ -2,6 +2,9 @@ import React from 'react';
 
 import Main from './Main';
 
+import {MainPlaceholder} from './MainPlaceholder';
+
+
 export default {
   title: 'Design_System/Pages/Main',
   component: Main,
@@ -15,3 +18,9 @@ MainStory.args = {
   title: "Sample",
   text: "Some description"
 };
+
+
+
+const TemplatePlaceholder = (args) => <MainPlaceholder {...args} />;
+
+export const MainPlaceholderStory = TemplatePlaceholder.bind({});

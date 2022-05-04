@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 
 import Main from './pages/Main/Main';
+import {MainPlaceholder} from './pages/Main/MainPlaceholder';
+
 import './App.scss';
 
 class App extends Component {
@@ -9,12 +11,13 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <h2 className="App-header">
-          DigitalBrain Test Extension
-        </h2>
-        <Main isExt={this.props.isExt}/>
-      </div>
+      <>
+        <MainPlaceholder />
+        <div id="App" className="App" hidden="true">
+          <Main isExt={this.props.isExt}/>
+        </div>
+      </>
+      
     );
   }
 }
