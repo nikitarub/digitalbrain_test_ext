@@ -72,11 +72,16 @@ export default class Main extends React.Component {
     render () {
         
         return (
-
-            <div className="main">
-                <Search />
-                <CommandList commands={this.state.commands}/>
-            </div>
+            <>
+                <h2 className="App-header">
+                    DigitalBrain Test Extension
+                </h2>
+                <div className="main">
+                    <Search />
+                    <CommandList commands={this.state.commands}/>
+                </div>
+            </>
+            
         )
     }
 }

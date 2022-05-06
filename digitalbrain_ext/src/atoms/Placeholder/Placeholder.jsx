@@ -1,36 +1,34 @@
 import React from 'react';
-import './placeholder.scss';
+import PropTypes from 'prop-types';
 
 
-export class Placeholder extends React.Component {
+export const Placeholder = (props) => {
 
-    componentDidMount = () => {
-        console.log("Placeholder Mounted");
-        
-    }
+    const radius = props.rounded ? "3px" : "0px";
 
-    onLoadFunc = () => {
-        console.log("Placeholder Loaded");
-    }
+    const style = {
+        width: props.width, 
+        height: props.height,
+        margin: props.margin,
+        backgroundColor: "#d3d3d3",
+        borderRadius: radius
+    };
     
-    
-    render() {        
-        return (
-            <div
-            className="digitalbrain-placeholder"
-            onLoad={this.onLoadFunc}
-            >
-                Placeholder
-            </div>
-        )
-    }
+    return (
+        <div style={style}>
+        </div>
+    )
 }
 
 Placeholder.propTypes = {
-
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
+    margin: PropTypes.string.isRequired,
+    rounded: PropTypes.bool,
 };
 
 
 Placeholder.defaultProps = {
+    rounded: true
 };
 

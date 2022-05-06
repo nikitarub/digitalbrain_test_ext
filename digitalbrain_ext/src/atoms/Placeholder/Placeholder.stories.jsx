@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Dummy from './Placeholder';
 import { Placeholder } from './Placeholder';
 
 export default {
@@ -10,6 +9,17 @@ export default {
 
 const Template = (args) => <Placeholder {...args} />;
 
-export const PlaceholderStory = Template.bind({});
-PlaceholderStory.args = {
+export const PlaceholderDefault = Template.bind({});
+PlaceholderDefault.args = {
+  width: "60px",
+  height: "20px",
+  rounded: true
+};
+
+export const PlaceholderMargin = Template.bind({});
+PlaceholderMargin.args = {
+  width: "60px",
+  height: "20px",
+  rounded: true,
+  margin: "20px 0 0 20px"
 };

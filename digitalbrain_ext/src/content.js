@@ -7,14 +7,40 @@ import App from "./App";
 
 
 class Main extends React.Component {
+    CSSDone = () => {
+      const my_ext_iframe = document.getElementById("my-ext-iframe");
+      let head_element = my_ext_iframe.contentWindow.document.getElementsByTagName("head")[0]
+      
+      my_ext_iframe.contentWindow.document.getElementById("MainPlaceholder").hidden = true;
+      my_ext_iframe.contentWindow.document.getElementById("App").hidden = false;
+    }
+
     loadingFunc = () => {
-      console.log("Frame loaded");
+      const my_ext_iframe = document.getElementById("my-ext-iframe");
+      let content_css_link_element = my_ext_iframe.contentWindow.document.getElementById("content_css_link")
+      if (content_css_link_element !== null){
+        return
+      }
+
+      let head_element = my_ext_iframe.contentWindow.document.getElementsByTagName("head")[0]
+      let link = document.createElement('link');
+      link.setAttribute("rel", "stylesheet");
+      link.setAttribute("type", "text/css");
+      link.id = "content_css_link"
+      link.onload = this.CSSDone;
+      const url = chrome.runtime.getURL("/static/css/content.css");
+      
+      link.setAttribute("href", url);
+      head_element.appendChild(link);
+      
     }
 
     render() {
         return (
             <>
-              <Frame onLoad={this.loadingFunc} head={[<link type="text/css" rel="stylesheet" href={chrome.runtime.getURL("/static/css/content.css")} ></link>]}> 
+              
+              <Frame id="my-ext-iframe" onLoad={this.loadingFunc}
+              > 
                 <FrameContextConsumer>
                 {
                     ({document, window}) => {
@@ -56,7 +82,7 @@ waitForElm('.app_container').then((elm) => {
     console.log("___EXT: app_container found: ", elm);
     elm.appendChild(app);
     ReactDOM.render(<Main />, app);
-    app.style.display = "none";
+    // app.style.display = "none";
 });
 
 
